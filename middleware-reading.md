@@ -86,33 +86,35 @@ app.post('/cities', function (request, response) {
 
 1. What will the client see when it `GET`s `/cities`?
 
-  <details><summary>click for answer</summary>
-  ```
-  {
-    cities: []  
-  }
-  ```
-  </details>
+<details><summary>click for answer</summary>
+
+```js
+{
+  cities: []  
+}
+
+```
+</details><br>
 
 2. Write code for an HTML form that would `POST` to the `/cities` route.
 
-  <details><summary>click for answer</summary>
+<details><summary>click for answer</summary>
 
 
-  ```html
-  <html>
-  <body>
-    <form method="POST" action="http://localhost:3000/cities">
-      <label for"cityName">city</label>
-      <input id="cityName" name="name" type="text" />
-      <label for"cityDesc">description</label>
-      <input id="cityDesc" name="description" type="text" />
-      <input type="submit" />
-    </form>
-  </body>
-  </html>
-  ```
-  </details>
+```html
+<html>
+<body>
+  <form method="POST" action="http://localhost:3000/cities">
+    <label for"cityName">city</label>
+    <input id="cityName" name="name" type="text" />
+    <label for"cityDesc">description</label>
+    <input id="cityDesc" name="description" type="text" />
+    <input type="submit" />
+  </form>
+</body>
+</html>
+```
+</details><br>
 
 ### Custom Middleware
 
