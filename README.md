@@ -72,7 +72,7 @@ Let's start a simple **Express** application.
 
 ##### Check for Understanding
 
-<details><summary>Summarize the effects of the two `npm` commands above.</summary>
+<details><summary>Summarize the effects of the two <code>npm</code> commands above.</summary>
 
 * Node Package Manager keeps track of the various libraries and third-party packages of code used in a Node project.  
 
@@ -116,7 +116,7 @@ The above two `npm` commands will be necessary for every new web application tha
 
 ##### Check for Understanding
 
-<details><summary> Visit `localhost:3000/` in your browser. Why don't we see anything yet? How can we show something here?</summary>
+<details><summary> Visit <code>localhost:3000/</code> in your browser. Why don't we see anything yet? How can we show something here?</summary>
 
 There aren't any routes yet! Add the following to the routes section of your `server.js` file and visit `localhost:3000/` again:
 
@@ -147,14 +147,14 @@ Let's build two more routes into our application:
 | `GET` | `/api/tacos` | `Soft Taco`, `Crunchy Taco`, `Super Taco` |
 
 
-<details><summary> click to see contents of `server.js`</summary>
+<details><summary> click to see contents of <code>server.js</code></summary>
 
 ```js
 // REQUIREMENTS
 var express = require('express'),
   app = express();
 
-//DATA (temporary until we know how to use databases)
+// DATA (temporary until we know how to use databases)
 var burgers = [
   'Hamburger',
   'Cheese Burger',
@@ -287,7 +287,7 @@ Reset your server and go to [`localhost:3000/thank?name=jane`](localhost:3000/th
   });
   ```
 
-  </details>
+  </details><br>
 
 
 2.  Create an `/add` route, similar to above.
@@ -306,7 +306,7 @@ Reset your server and go to [`localhost:3000/thank?name=jane`](localhost:3000/th
   });
   ```
 
-  </details>
+  </details><br>
 
 ### Choosing Parameter Types
 
@@ -345,28 +345,28 @@ Of course, you might combine both in some cases: `/posts/33/comments?limit=50`
 
 2. We'd like a route that will allow you to access a single taco by its index in the array. For example, sending index 2 would trigger a server response with the text "Super Taco".  What kind of parameters would be most appropriate for this route, query parameters or url parameters?
 
-  <details><summary>click for answer</summary>
+<details><summary>click for answer</summary>
 
-  Since we're identifying a single resource, it's best to use url parameters (aka route parameters).
+Since we're identifying a single resource, it's best to use url parameters (aka route parameters).
 
-  </details>
+</details><br>
 
 3. Create the route you planned in your server file. Following the pattern from the example earlier, your endpoint should include `/api`.
 
-  <details><summary>click for answer</summary>
+<details><summary>click for answer</summary>
 
-  ```js
-  // server.js
+```js
+// server.js
 
-  // Which Taco?
-  app.get('/api/tacos/:id', function(request, response){
-    var index = request.params.id;
-    var selection = tacos[index] || 'Sorry, that\'s not a taco option';
-    response.json( selection );
-  });
-  ```
+// Which Taco?
+app.get('/api/tacos/:id', function(request, response){
+  var index = request.params.id;
+  var selection = tacos[index] || 'Sorry, that\'s not a taco option';
+  response.json( selection );
+});
+```
 
-  </details>
+</details><br>
 
 
 ### POST
