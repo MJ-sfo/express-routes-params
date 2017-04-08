@@ -348,12 +348,13 @@ Of course, you might combine both in some cases: `/posts/33/comments?limit=50`
   <details><summary>click for answer</summary>
 
   Since we're identifying a single resource, it's best to use url parameters (aka route parameters).
-  
+
   </details>
 
 3. Create the route you planned in your server file. Following the pattern from the example earlier, your endpoint should include `/api`.
 
   <details><summary>click for answer</summary>
+
   ```js
   // server.js
 
@@ -363,8 +364,8 @@ Of course, you might combine both in some cases: `/posts/33/comments?limit=50`
     var selection = tacos[index] || 'Sorry, that\'s not a taco option';
     response.json( selection );
   });
-
   ```
+
   </details>
 
 
