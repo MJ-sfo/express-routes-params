@@ -1,7 +1,7 @@
 # Middleware
 
 
-###What is middleware?
+### What is middleware?
 
 In terms of Express, [middleware](http://expressjs.com/guide/using-middleware.html) is a function with access to the request object (`request`), the response object (`response`), and the next middleware in the application’s request-response cycle, commonly denoted by a variable named `next`.
 
@@ -141,4 +141,4 @@ Now every name will be capitalized, both for the `GET /greet/:name` route above 
 
 ### Additional Resources
 
-1. [body-parser](https://github.com/expressjs/body-parser) on Github.
+* [body-parser](https://github.com/expressjs/body-parser) on Github.
