@@ -116,7 +116,7 @@ The above two `npm` commands will be necessary for every new web application tha
 
 ##### Check for Understanding
 
-<details><summary>Visit `localhost:3000/` in your browser. Why don't we see anything yet? How can we show something here?</summary>
+<details><summary> Visit `localhost:3000/` in your browser. Why don't we see anything yet? How can we show something here?</summary>
 
 There aren't any routes yet! Add the following to the routes section of your `server.js` file and visit `localhost:3000/` again:
 
@@ -211,7 +211,7 @@ In the route above, `:name` is considered a route or URL parameter. Inside the r
 <details><summary>What URL would you visit to see the results of the route above? Can you make the site say hello with your name?</summary>
 
 
-Reset your server and go to [localhost:3000/greetings/jane](localhost:3000/greetings/jane), but use your name instead if it's not Jane!
+Reset your server and go to [`localhost:3000/greetings/jane`](localhost:3000/greetings/jane), but use your name instead if it's not Jane!
 </details>
 
 ### Independent Practice: Pick A Color
@@ -219,6 +219,7 @@ Reset your server and go to [localhost:3000/greetings/jane](localhost:3000/greet
 Create a route that responds with "You picked: blue" or "You picked: green" depending on a parameter in its path. For instance, if I visit `localhost:3000/pick-a-color/orange` in the browser, I should see the name of the color I chose (orange) as the response.
 
 <details><summary>click for answer</summary>
+
 ```js
 // server.js
 // Pick A Color Route
@@ -227,6 +228,7 @@ app.get('/color/:choice', function(request, response){
   response.send('Your color is: ' + choice);
 });
 ```
+
 </details>
 
 
@@ -263,7 +265,7 @@ app.get("/thank", function (request, response) {
 <details><summary>What URL would you visit to see the results of the route above? Can you make the site say thank you with your name?</summary>
 
 
-Reset your server and go to [localhost:3000/thank?name=jane](localhost:3000/thank?name=jane), but use your name instead if it's not Jane!
+Reset your server and go to [`localhost:3000/thank?name=jane`](localhost:3000/thank?name=jane), but use your name instead if it's not Jane!
 </details>
 
 
@@ -273,6 +275,7 @@ Reset your server and go to [localhost:3000/thank?name=jane](localhost:3000/than
 
 
   <details><summary>click for answer</summary>
+
   ```js
   // server.js
   // Calculator
@@ -283,6 +286,7 @@ Reset your server and go to [localhost:3000/thank?name=jane](localhost:3000/than
     response.send( total + " is the result");
   });
   ```
+
   </details>
 
 
@@ -290,6 +294,7 @@ Reset your server and go to [localhost:3000/thank?name=jane](localhost:3000/than
 
 
   <details><summary>click for answer</summary>
+
   ```js
   // server.js
   // Calculator
@@ -300,6 +305,7 @@ Reset your server and go to [localhost:3000/thank?name=jane](localhost:3000/than
     response.send( total + " is the result");
   });
   ```
+
   </details>
 
 ### Choosing Parameter Types
@@ -340,7 +346,9 @@ Of course, you might combine both in some cases: `/posts/33/comments?limit=50`
 2. We'd like a route that will allow you to access a single taco by its index in the array. For example, sending index 2 would trigger a server response with the text "Super Taco".  What kind of parameters would be most appropriate for this route, query parameters or url parameters?
 
   <details><summary>click for answer</summary>
+
   Since we're identifying a single resource, it's best to use url parameters (aka route parameters).
+  
   </details>
 
 3. Create the route you planned in your server file. Following the pattern from the example earlier, your endpoint should include `/api`.
