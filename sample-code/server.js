@@ -13,6 +13,9 @@ app.use(express.static('public'));
 //including body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
+// store album data on server when it's running 
+// wouldn't it be nice if we had a database instead?
 var albums = [
   {
     title: 'Cupid Deluxe',
@@ -51,11 +54,11 @@ app.get('/api/albums', function(req,res) {
 });
 
 app.post('/api/albums', function citiesCreate(request, response) {
-var name = request.body.name;
-var artist = request.body.artist;
-var newAlbum = { title: name, artist: artist };
-albums.push(newAlbum);
-response.json(albums);
+  var name = request.body.name;
+  var artist = request.body.artist;
+  var newAlbum = { title: name, artist: artist };
+  albums.push(newAlbum);
+  response.json(albums);
 });
 
 app.listen(process.env.PORT || 3000, function () {
