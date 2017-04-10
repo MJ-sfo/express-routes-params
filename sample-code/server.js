@@ -14,7 +14,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-// store album data on server when it's running 
+// store album data on server when it's running
 // wouldn't it be nice if we had a database instead?
 var albums = [
   {

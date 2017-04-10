@@ -14,15 +14,26 @@ $(document).ready(function(){
 });
 
 
+
+
 function handleSuccess(json) {
-  // takes an array of albums and renders them as an unordered list
+  // takes an array of albums and renders them as cards
   var albums = json;
-  var outputHtml = '<ul>';
-  albums.forEach(function(album) {
-    outputHtml = outputHtml + "<li>" + album.artist + " -- " + album.title + "</li>";
+  var albumHtmlString = '';
+  var albumDiv = $('#albumTarget');
+  albums.forEach(function(album){
+    albumHtmlString = templateAlbum(album);
+    albumDiv.append(albumHtmlString);
   });
-  outputHtml += '</ul>';
-  $('#albumTarget').html(outputHtml);
+}
+
+function templateAlbum(albumInfo){
+  return `<div class="card">
+      <div class="card-content">
+        <span class="card-title">${albumInfo.title}</span>
+        <p>by ${albumInfo.artist}</p>
+      </div>
+    </div>`
 }
 
 function handleError(e) {
