@@ -16,10 +16,10 @@ Hard-coded routes like `/about`, `/home`, and `/contact` will only take a websit
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- Create more flexible, dynamic routes with parameterized route urls.
-- Process data sent to a server through query strings.
-- Process data sent from named form fields with `POST` requests.
-- Identify Express routing patterns that can be used for PUT, PATCH, and DELETE requests.
+- Create more flexible, dynamic routes with parameterized route urls and `request.params`.
+- Process data sent to a server through query strings, with `request.query`.
+- Use `body parser` middleware to process data sent from named form fields as `request.body`.
+- Identify Express routing patterns that can be used for `PUT`, `PATCH`, and `DELETE` requests.
 
 
 ### Where should we be now?
@@ -72,7 +72,7 @@ Let's start a simple **Express** application.
 
 ##### Check for Understanding
 
-<details><summary>Summarize the effects of the two <code>npm</code> commands above.</summary>
+<details><summary>Summarize the effects of the two <code>npm</code> commands above: <code>npm init</code> and <code>npm install</code>.</summary>
 
 * Node Package Manager keeps track of the various libraries and third-party packages of code used in a Node project.  
 
@@ -96,6 +96,8 @@ The above two `npm` commands will be necessary for every new web application tha
   var app = express();
 
   // MIDDLEWARE
+  // serve assets from the public folder...
+  // ... as if they were inside the / directory
   app.use(express.static('public'));
 
   // ROUTES
@@ -415,13 +417,15 @@ function handleError(jqXHR, status, error){
 }
 ```
 
-Either of those options requires an HTML view with a form.  You can also make HTTP requests with a GUI like Postman or a command line tool like `curl`. Specify `application/x-www-form-urlencoded` (or `-d` for `curl`) for easier compatability with our Express server.
+Each of those examples relies on an HTML view with a form.  You can also make HTTP requests with a GUI like Postman or a command line tool like `curl`. Specify `application/x-www-form-urlencoded` (or `-d` for `curl`) for easier compatability with our Express server.
 
 #### Server-side `POST` Request Handling
 
 In our Express server, we'll use `app.post` rather than `app.get` to handle `POST` requests.  This way, we can make two routes that use the same path.
 
-In other words, **both the request type and request path must match for the server and client to communicate correctly**.
+Remember, both the request type and request path must match for the server and client to communicate correctly.
+
+**A route is the combination of a request method and a path.**
 
 ```js
 // server.js
