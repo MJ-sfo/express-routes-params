@@ -53,10 +53,21 @@ app.get("/thank", function (request, response) {
   response.send('Thank you, ' + name + '!');
 });
 
-app.get("/multiply", function (req, res) {
+app.get("/api/multiply", function (req, res) {
+  console.log("trying to multiply");
   var x = req.query.x;
   var y = req.query.y;
   res.send(x*y + " is the result");
+});
+
+// if url is http://localhost:3000/api/tacos/Soft%20Taco or http://localhost:3000/api/tacos/1, response is "Sorry,
+// that'snotatacooption"
+app.get('/api/tacos/:id', function (req, res) {
+  var taco = req.params.id;
+  console.log(taco);
+  var selection = tacos[taco] || "Sorry, that's not a taco option";
+  // res.send('You get a ' + tacos[kindOf] + '!');
+  res.json(selection);
 });
 
 //  SERVER START
